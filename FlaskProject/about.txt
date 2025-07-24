@@ -1,0 +1,5 @@
+1. Created Flask application for logging in the user.
+2. Date and time are loaded dynamically with in the application
+3. Microservices are Created separating backend and frontend
+4. Data are stored in MongoDB
+5. using view data button we can view the users that have logged in
