@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IzyaNabeel App</title>
+</head>
+<body>
+    <h1>Welcome to IzyaNabeel App</h1>
+    {% for name in data %}
+        <p>{{ name }}</p>
+    {% endfor %}
+    
+    #Environmental Variables
+    {% for key, value in env.items() %}
+        <p>{{ key }}: {{ value }}</p>
+    {% endfor %}
+</body>
+<style> 
+    body {
+        font-family: Arial, sans-serif;
+        background-color: black;
+        color: yellow;
+    }
+    h1 {
+        color: red;
+    }
+    p {
+        font-size: 18px;
+    }
+</style>
+</html>

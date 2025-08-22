@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fenrir-backend
+spec:
+  selector:
+    matchLabels:
+      app: fenrir-backend
+  template:
+    metadata:
+      labels:
+        app: fenrir-backend
+    spec:
+      containers:
+      - name: fenrir-backend
+        image: docker.io/noorsadiya/izyaanabeel-fenrir-backend:latest
+        ports:
+        - containerPort: 8000
+        env:
+        - name: MONGO_HOST
+          value: mongo.izyaanabeel.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fenrir-backend
+spec:
+  selector:
+    app: fenrir-backend
+  ports:
+  - port: 80
+    targetPort: 8000

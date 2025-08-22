@@ -1,12 +1,12 @@
-from python:3.8-slim
+FROM python:3.8-slim-buster
 
-ADD backend/requirements.txt /tmp/requirements.txt
+ADD requirements.txt /app/requirements.txt
 
 ENV BACKEND_URL=http://0.0.0.0:8000
 
-RUN pip install -r /tmp/requirements.txt
+RUN pip install -r /app/requirements.txt
 
-ADD backend /app
+ADD . /app
 
 WORKDIR /app
 

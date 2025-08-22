@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fenrir-frontend
+spec:
+  selector:
+    matchLabels:
+      app: fenrir-frontend
+  template:
+    metadata:
+      labels:
+        app: fenrir-frontend
+    spec:
+      containers:
+      - name: fenrir-frontend
+        image: docker.io/noorsadiya/izyaanabeel-fenrir-frontend:latest
+        ports:
+        - containerPort: 9000
+        env:
+        - name: Backend_URL
+          value: "http://fenrir-backend.izyaanabeel.svc.cluster.local"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fenrir-frontend
+spec:
+  selector:
+    app: fenrir-frontend
+  ports:
+  - port: 80
+    targetPort: 9000
