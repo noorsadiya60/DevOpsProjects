@@ -1,1 +1,6 @@
-
+1. This app is about deploying frontend service, backend service, DB service  on kubernetes
+2. In this app frontend shows data about the user and system environment variables
+3. In Backend we are connecting to mongo dB for creating and storing the data.
+4. Data is persistend because of this.
+5. service, deployment yaml files are created for frontend, backend and DB.
+6. On applying these yaml file using kubectl, we can see the working of app.
