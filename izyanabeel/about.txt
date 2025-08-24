@@ -1,0 +1,7 @@
+1. This app is about deploying frontend service and backend service on kubernetes
+2. In this app frontend shows data about the user and system environment variables
+3. In Backend we are storing the data.
+4. Data is not persistend because of this.
+5. Dockerfiles are created for both frontend and backend.
+6. service, deployment yaml files are created for frontend and backend.
+7. On applying these yaml file using kubectl, we can see the working of app.
